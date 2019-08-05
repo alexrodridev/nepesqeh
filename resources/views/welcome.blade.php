@@ -137,6 +137,9 @@
                                 <label for="nome">Nome Completo</label>
                                 <input type="text" class="form-control" name="nome" id="nome" value="{{ old('nome') }}" placeholder="Nome Completo">
                                 @if ($errors->has('nome'))
+                                <script>
+                                    document.getElementById("nome").focus();
+                                </script>
                                 <div class="alert alert-danger" role="alert">
                                     <strong>{{ $errors->first('nome') }}</strong>
                                 </div>
@@ -146,6 +149,9 @@
                                 <label for="cpf">CPF</label>
                                 <input type="text" class="form-control" name="cpf" id="cpf" value="{{ old('cpf') }}" placeholder="CPF">
                                 @if ($errors->has('cpf'))
+                                <script>
+                                    document.getElementById("cpf").focus();
+                                </script>
                                 <div class="alert alert-danger" role="alert">
                                     <strong>{{ $errors->first('cpf') }}</strong>
                                 </div>
@@ -155,6 +161,9 @@
                                 <label for="tel">Telefone</label>
                                 <input type="tel" class="form-control" name="tel" id="tel" value="{{ old('tel') }}" placeholder="Telefone">
                                 @if ($errors->has('tel'))
+                                <script>
+                                    document.getElementById("tel").focus();
+                                </script>
                                 <div class="alert alert-danger" role="alert">
                                     <strong>{{ $errors->first('tel') }}</strong>
                                 </div>
@@ -164,6 +173,9 @@
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
                                 @if ($errors->has('email'))
+                                <script>
+                                    document.getElementById("email").focus();
+                                </script>
                                 <div class="alert alert-danger" role="alert">
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </div>
@@ -178,6 +190,9 @@
                                     @endforeach
                                 </select>
                                 @if ($errors->has('evento'))
+                                <script>
+                                    document.getElementById("evento").focus();
+                                </script>
                                 <div class="alert alert-danger" role="alert">
                                     <strong>{{ $errors->first('evento') }}</strong>
                                 </div>
