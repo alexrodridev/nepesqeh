@@ -1,0 +1,30 @@
+header section#topo{
+    background: #01d262;
+    color: #fff;
+}
+
+header section#topo div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-brand{
+    color: #01d262;
+}
+
+aside{
+    background: #d8d8d8;
+    padding: 0 30px;
+}
+footer section {
+    background: #2e2e2e;
+    color: #5b5b5b;
+}
+
+footer section#bottom {
+    background: #232323;
+}
+
+footer section h2, footer section h4 {
+    color: #fff;
+}
