@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ForeignKeyInscricoes extends Migration
+class ForeignKeyInscritos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class ForeignKeyInscricoes extends Migration
      */
     public function up()
     {
-        Schema::table('inscricoes', function (Blueprint $table){
+        Schema::table('inscritos', function (Blueprint $table){
             $table->unsignedBigInteger('eventos_id');
             $table->foreign('eventos_id')->references('id')->on('eventos');
-        });
-
-        Schema::table('inscricoes', function (Blueprint $table){
-            $table->unsignedBigInteger('inscritos_id');
-            $table->foreign('inscritos_id')->references('id')->on('inscritos');
         });
     }
 
@@ -31,6 +26,6 @@ class ForeignKeyInscricoes extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['eventos_id','inscritos_id']);
+        $table->dropForeign(['eventos_id']);
     }
 }

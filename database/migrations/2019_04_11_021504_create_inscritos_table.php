@@ -15,12 +15,10 @@ class CreateInscritosTable extends Migration
     {
         Schema::create('inscritos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 40);
-            $table->string('email', 35);
+            $table->string('nome', 60);
+            $table->string('email', 60);
             $table->string('cpf', 11);
-            $table->string('course', 30);
-            $table->string('institute', 30);
-            $table->string('type', 5);
+            $table->string('tel', 11);
             $table->timestamps();
         });
     }

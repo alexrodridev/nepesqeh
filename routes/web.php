@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'SiteController@index');
+Route::get('/', 'SiteController@index')->name('barra');
 
 Route::get('/noticias', 'SiteController@noticia')->name('noticia.listar');
 Route::get('/noticias/{id}/{titulo?}', 'SiteController@noticiaMostrar')->name('noticia.show');

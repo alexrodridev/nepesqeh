@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Noticia;
 use App\Evento;
-
+use App\Inscrito;
 use App\Artigo;
 
 class SiteController extends Controller
@@ -32,12 +32,21 @@ class SiteController extends Controller
      */
     public function inscrever(Request $request)
     {
-        dd($request);
-        $noticia = Noticia::find($id);
-        if (!$noticia) {
-            abort(404);
-        }
-        return view('noticia', compact('noticia'));
+        $validatedData = $request->validate([
+            'nome' => 'required',
+            'cpf' => 'required|numeric|max:11',
+            'tel' => 'required|numeric|max:11',
+            'email' => 'required|email',
+            'evento' => 'required',
+        ]);
+        $evento = Inscrito::create([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'eventos_id' => $request->evento,
+        ]);
+        return redirect()->route('barra');
     }
 
     /**
