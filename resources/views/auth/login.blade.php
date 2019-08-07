@@ -5,13 +5,13 @@
 @stop
 
 @section('principal')
-<section class="container">
-    <div class="donors">
-        <form class="donors_input" action="{{ route('login') }}" method="POST">
-            <h2>{{ __('Login') }}</h2>
+<section class="row justify-content-center">
+    <div class="card col-12 col-sm-5 my-4">
+        <form class="card-body" action="{{ route('login') }}" method="POST">
+            <h2 class="text-center m-3">Entrar</h2>
             @csrf
-            <div class="text-white">
-                <label for="email" class="">{{ __('E-Mail Address') }}</label>
+            <div>
+                <label for="email" class="">E-mail</label>
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
                 @endif
             </div>
             <div>
-                <label for="password" class="">{{ __('Password') }}</label>
+                <label for="password" class="">Senha</label>
                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                 @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
@@ -30,34 +30,10 @@
             </div>
             <div>
                 <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label class="" for="remember">{{ __('Remember Me') }}</label>
+                <label class="" for="remember">Lembrar de mim</label>
             </div>
-            <div>
-                @if (Route::has('password.request'))
-                    <a class="" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                @endif
-            </div>
-            <input type="submit" value="{{ __('Login') }}">
+            <input type="submit" class="btn btn-success" value="{{ __('Login') }}">
         </form>
-        <div class="donors_image">
-            <h2>Entrar com</h2>
-            <div class="donors_featured owl-carousel owl-theme">
-                <div class="item">
-                    <img src="img/donors_featured_one.jpg" alt="">
-                    <h3>Facebook</h3>
-                </div>
-                <div class="item">
-                    <img src="img/donors_featured_one.jpg" alt="">
-                    <h3>Google</h3>
-                </div>
-                <div class="item">
-                    <img src="img/donors_featured_one.jpg" alt="">
-                    <h3>Twitter</h3>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 @endsection

@@ -4,34 +4,33 @@
 <section class="row justify-content-center">
     <div class="col-12 col-sm-10">
         <div class="bd-example">
-          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img\events_single_one.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @for ($a = 0; $a < $ie; $a++)
+                        @if ($a == 0)
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li> 
+                        @else
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0"></li>                             
+                        @endif
+                    @endfor
+                </ol>
+                <div class="carousel-inner">
+                    @foreach ($eventos as $e)
+                        @if ($i == 0)
+                        <div class="carousel-item active">
+                        @else
+                        <div class="carousel-item">
+                        @endif
+                            <img src="{{ asset('storage/evento/'.$e->imagem) }}" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>{{ $e->titulo }}</p>
+                            </div>
+                        </div>
+                        @php
+                            $i++
+                        @endphp
+                    @endforeach
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="img\events_single_two.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="img\events_single_three.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-              </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,7 +40,6 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
-          </div>
         </div>
     </div>
 </section>
@@ -171,7 +169,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
+                                <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
                                 @if ($errors->has('email'))
                                 <script>
                                     document.getElementById("email").focus();
@@ -207,7 +205,7 @@
         </div>
     </div>
 </section>
-<section class="row justify-content-center">
+<section id="artigos" class="row justify-content-center">
     <div class="col-12 col-sm-10 my-4">
         <h2 class="text-center m-3">Artigos</h2>
         <div class="row grid">

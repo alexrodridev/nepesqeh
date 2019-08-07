@@ -4,7 +4,7 @@
 	<section class="row justify-content-center">
 		<div class="col-12 col-sm-10 my-4">
 			<h2>Eventos</h2>
-			<p>dsd</p>
+			<p></p>
 			<div class="row my-3 grid">
 				@foreach ($evento as $e)
 					<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 my-3 grid-item">

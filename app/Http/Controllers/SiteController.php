@@ -21,8 +21,10 @@ class SiteController extends Controller
         $eventos = Evento::all();
         $e_insc = Evento::where('inscrever',1)->get();
         $artigos = Artigo::all();
+        $i = 0;
+        $ie = Evento::count();
         
-        return view('welcome', compact('noticia','eventos','artigos','e_insc'));
+        return view('welcome', compact('noticia','eventos','artigos','e_insc', 'i', 'ie'));
     }
 
     /**
