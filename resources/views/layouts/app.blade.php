@@ -68,13 +68,9 @@
 		</section>
 		<footer class="row bg-light justify-content-center">
 			<section class="col-md-12 row justify-content-center">
-				<div class="col-12 col-sm-6 col-md-3 py-4">
+				<div class="col-12 col-sm-6 col-md-6 py-4">
 					<h4>NEPESQEH</h4>
-					<p>Texto</p>
-				</div>
-				<div class="col-12 col-sm-6 col-md-3 py-4">
-					<h6>POSTS RECENTES</h6>
-					<p>Post</p>
+					<p>Núcleo de Estudos e Pesquisas em Envelhecimento Humano</p>
 				</div>
 				<div class="col-12 col-sm-6 col-md-3 py-4">
 					<h6>LINKS ÚTEIS</h6>
